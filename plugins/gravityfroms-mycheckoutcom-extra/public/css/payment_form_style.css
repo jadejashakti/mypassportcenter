@@ -1,0 +1,347 @@
+.order-details-container {
+  max-width: 500px;
+  max-height: fit-content;
+  margin: 0px auto;
+  padding: 30px;
+  /* background-color: #323946; */
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0px;
+}
+
+@media only screen and (max-width: 767px) {
+	.order-details-container {
+		margin: 20px auto;
+		position: unset;
+	}
+}
+
+
+@media only screen and (max-width: 575px) {
+	.order-details-container {
+		padding: 20px;
+	}
+}
+
+.notice-payment p {
+    font-size: 14px !important;
+}
+
+.order-details-container-details p {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 18px !important;
+}
+
+.order-details-container-details p.order-total-amount {
+  justify-content: end !important;
+  padding-top: 10px;
+  border-top: 1px solid #e1e1e1;
+}
+
+.notice-payment p {
+  font-size: 11px;
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  background-color: #fffbcc;
+  display: block;
+  width: 290px;
+  margin: 0 !important;
+}
+.payment-method-text p {
+  padding: 10px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+}
+/* navigation button css */
+
+.gform-theme--foundation .gform_page_footer {
+    justify-content: space-between !important;
+}
+
+.gform-page-footer.gform_page_footer .gform_previous_button {
+    background-color: #FFF !important;
+    color: #000 !important;
+}
+
+#order-summary-main-container {
+  /* visibility: hidden; */
+  display: none;
+}
+
+.order-summary-container {
+  color: var(--e-global-color-light);
+  font-family: "Inter", Sans-serif;
+  gap: 10px;
+  text-transform: capitalize;
+}
+.order-summary-grid {
+  color: var(--e-global-color-light);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 16px;
+  font-size: 15px;
+}
+
+.order-summary-grid .item-name,
+.order-summary-grid .item-price {
+  padding: 4px 0;
+}
+
+.item-price {
+  text-align: right;
+}
+
+.order-summary-total-row strong {
+  color: var(--e-global-color-light);
+}
+
+.order-summary-product-details {
+  width: 100%;
+  border-style: solid;
+  border-width: 0px 0px 1px 0px;
+  border-color: var(--e-global-color-light);
+  font-weight: bold;
+}
+
+.order-summary-addons {
+  width: 100%;
+}
+
+.order-summary-total-row {
+  width: 100%;
+  color: var(--e-global-color-light);
+  border-top: 1px solid var(--e-global-color-light);
+  padding-top: 6px;
+  font-weight: bold;
+}
+
+.no-addons {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-style: italic;
+  /* color: #777; */
+}
+
+.addons-custom-title {
+  font-weight: bold;
+}
+
+.passport-insurance-notice,
+.priority-service-notice,
+.passport-card-notice {
+  line-height: 1.5;
+}
+
+/*For Product name and total price in review page*/
+.product-base-price-custom,
+.product-total-custom {
+  display: none !important;
+}
+
+.order-sub-detail {
+  display: none;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+    .checkout-payment-wrapper {
+        flex-wrap: wrap;
+    }
+}
+
+/* @media only screen and (max-width: 575px) {
+    .passport-form-inner form .gf_page_steps {
+        gap: 0 3px !important;
+    }
+    .checkout-payment-box,
+    .order-details-container {
+        box-shadow: none !important;
+        padding: unset !important;
+        margin: unset !important;
+    }
+} */
+
+
+/** UKETA Form Styles*/
+
+/* h3.gsection_title {
+    background-color: rgb(0, 44, 143);
+    color: white !important;
+    padding: 20px 25px;
+    border-radius: 16px;
+    font-size: 18px !important;
+    margin: 55px 0 30px 0;
+} */
+
+.gfield--input-type-section {
+/*     border: unset !important; */
+    padding: 0 !important;
+}
+
+.age-alert-popup-alert {
+    margin-top: 20px;
+    padding: 12px;
+    background: #fff8e6;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.iti__country-container button {
+    color: unset !important;
+    background-color: unset !important;
+    box-shadow: unset !important;
+    border-radius: unset !important;
+    padding: unset !important;
+}
+
+.iti__country-container button:hover {
+    background-color: unset !important;
+    color: #fff !important;
+    text-decoration: none;
+}
+
+form#gform_1 {
+    padding-bottom: 30px;
+}
+
+
+/** New checkout Styles */
+
+.payment-container-main.checkout-payment-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+    justify-content: space-around;
+    max-width: 950px;
+    margin: auto;
+}
+
+.checkout-payment-box {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 575px) {
+	.checkout-payment-box {
+		padding: 20px;
+	}
+}
+
+.checkout-payment-box h2 {
+	font-size: 26px !important;
+	margin-bottom: 16px !important;
+}
+
+@media (max-width: 1024px) {
+    .checkout-payment-box h2 {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .checkout-payment-box h2 {
+        font-size: 22px !important;
+    }
+}
+
+#iframe-wrapper {
+    width: 100%;
+    margin: 0px auto;
+    min-height: 250px;
+}
+
+#payment-frame {
+    width: 100%;
+/*     height: 590px; */
+	height: 510px;
+    border: 0;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 991px) {
+	#payment-frame {
+		height: 500px;
+	}
+}
+
+@media only screen and (max-width: 870px) {
+	#payment-frame {
+		height: 700px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	    #payment-frame {
+        height: 472px;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+	 #payment-frame {
+	height: 495px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	 #payment-frame {
+	height: 610px;
+	}
+}
+
+@media only screen and (max-width: 390px) {
+	#payment-frame {
+	height: 675px;
+	}
+}
+ 
+h2.gform_payment_error_custom {
+    color: #FF4747 !important;
+    font-size: 17px !important;
+    text-transform: capitalize !important;
+}
+
+@media (max-width: 768px) {
+    .payment-container-main.checkout-payment-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .checkout-payment-box {
+        order: 2;
+    }
+    .order-details-container {
+        order: 1;
+    }
+}
+
+.form-passport-book-container,
+.form-passport-card-container {
+  width: 360px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  box-shadow: 0px 0px 6px -1px rgba(3.000000000000002, 70.99999999999996, 54.99999999999999, 0.66) !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+}
+
+.form-passport-book-container h3,
+.form-passport-card-container h3 {
+  border-bottom: solid 2px #212427;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #212427;
+}
+
+#not-gov-site-tooltip {
+	display: none !important;
+}
