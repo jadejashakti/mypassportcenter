@@ -1,15 +1,13 @@
 <?php
 
-class Class_customize_pdf_data
-{
+class Class_customize_pdf_data {
 
 	/**
 	 * Constructor.
 	 * Sets up action hooks for handling form submissions and payment processing.
 	 */
-	public function __construct()
-	{
-		add_filter('fg_fillablepdfs_pdf_args', array($this, 'custimize_fields_before_pdf_making'), 10, 4);
+	public function __construct() {
+		add_filter( 'fg_fillablepdfs_pdf_args', array( $this, 'custimize_fields_before_pdf_making' ), 10, 4 );
 	}
 
 	/**
@@ -22,8 +20,7 @@ class Class_customize_pdf_data
 	 *
 	 * @return array Modified PDF metadata.
 	 */
-	public function custimize_fields_before_pdf_making($pdf_meta, $feed, $entry, $form)
-	{
+	public function custimize_fields_before_pdf_making( $pdf_meta, $feed, $entry, $form ) {
 
 		$ssn_fields_key = array(
 			'Social Security Number', // For DS-64.
@@ -31,10 +28,10 @@ class Class_customize_pdf_data
 			"Applicant's SSN", // For Ds-5504.
 		);
 
-		foreach ($pdf_meta['field_values'] as $key => $value) {
+		foreach ( $pdf_meta['field_values'] as $key => $value ) {
 			// If this PDF field corresponds to one of your form's SSN or date fields.
-			if (! empty($ssn_fields_key) && in_array($key, $ssn_fields_key) && ! empty($value)) {
-				$pdf_meta['field_values'][$key] = preg_replace('/\D/', '', $value);
+			if ( ! empty( $ssn_fields_key ) && in_array( $key, $ssn_fields_key ) && ! empty( $value ) ) {
+				$pdf_meta['field_values'][ $key ] = preg_replace( '/\D/', '', $value );
 			}
 		}
 		// error_log( ' $pdf_meta["field_values"]: ' . print_r( $pdf_meta, true ) );

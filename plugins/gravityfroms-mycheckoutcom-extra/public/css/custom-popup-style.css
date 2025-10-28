@@ -155,6 +155,24 @@ tr.data-question-label td font {
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.3px;
+  display: flex;
+  gap: 10px;
+  cursor: 'pointer';
+	user-select: 'none';
+}
+
+.section-header h3{
+   color: var(--e-global-color-light) !important;
+   font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 0px;
+}
+
+.section-header-completed{
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+  margin-bottom: 0px;
 }
 
 .section-content {
@@ -164,7 +182,7 @@ tr.data-question-label td font {
 .review-form-row {
   display: flex;
   padding: 12px 0px 12px 10px;
-  border-bottom: 1px solid #f0f4f9;
+  border-bottom: 1px solid #e7ebee;
 }
 
 .review-form-row:last-child {
@@ -176,20 +194,31 @@ tr.data-question-label td font {
 }
 
 .question {
-  flex: 0 0 42%;
+  flex: 0 0 50%;
   font-weight: 600;
   padding-right: 20px;
-  color: #2d3748;
+  /* color: #4a5568; */
+  color: #6d7275;
   font-size: 15px;
+  text-align: end;
+}
+
+@media only screen and (max-width: 769px) {
+	.question {
+		text-align: start;
+	}
 }
 
 .answer {
-  border-left: 1px solid #b9b4bb;
-  padding-left: 20px;
+  /* border-left: 1px solid #b9b4bb;
+  padding-left: 20px; */
   flex: 1;
-  color: #4a5568;
+  /* color: #2d3748; */
+  color: #1f2022;
   font-size: 15px !important;
-  line-height: 1.7 !important;
+  font-weight: 700;
+  line-height: 1.5 !important;
+
 }
 
 .answer font {
@@ -275,12 +304,23 @@ tr.order-table-row td:first-child {
 }
 
 button.section-edit-button {
+
   background-color: #002868 !important;
   outline: 0;
   border: 1px solid #002868;
+  text-transform: uppercase;
   padding: 15px 25px;
   border-radius: 13px;
   color: #fff;
+}
+
+button.section-edit-button:hover{
+  background-color: #0B3270 !important;
+}
+
+.section-edit-btn-container{
+  text-align: center;
+  margin-top: 15px;
 }
 
 @media (max-width: 768px) {
@@ -303,4 +343,53 @@ button.section-edit-button {
     padding: 12px 15px;
     font-size: 16px;
   }
+}
+
+.custom-warning-review-data{
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+
+.gf_alert_yellow.container-warning-review-data, #field_1_154,
+#field_4_172,
+#field_5_144,
+#field_6_153,
+#field_11_154,
+#field_14_153,
+#field_13_172,
+#field_12_144 {
+	width: fit-content !important;
+  margin-left: auto !important;
+}
+
+#order-summary-notice {
+	color: white !important;
+	font-size: 13.5px;
+}
+
+.gfield_checkbox .gchoice label{
+	display: flex;
+	justify-content: space-between;
+}
+
+.passport-add-ons legend {
+	font-size: 22px !important;
+	font-weight: 600 !important;
+	
+}
+
+.passport-add-ons .gfield_checkbox .gchoice {
+	margin: 20px 0 8px 0;
+}
+
+.passport-add-ons .ginput_price {
+	font-size: 18px !important;
+	font-weight: 600;
+}
+
+.passport-insurance-notice,
+.priority-service-notice,
+.passport-card-notice {
+	line-height: 24px !important;
 }

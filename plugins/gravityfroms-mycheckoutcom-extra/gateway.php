@@ -3,14 +3,14 @@
 Plugin Name: Gravity Forms Checkout.com Gateway Extra
 Plugin URI: https://wpgateways.com/products/checkout-com-gateway-gravity-forms/
 Description: Extends Gravity Forms to process payments with Checkout.com payment gateway
-Version: 1.2.0
+Version: 1.2.2.2
 Author: Your Name
 Author URI: https://youtsite.com
 Text Domain: gf-checkout-com
 Domain Path: /languages
 */
 
-define( 'GF_CHECKOUT_COM_VERSION', '1.2.0' );
+define( 'GF_CHECKOUT_COM_VERSION', '1.2.2.7.2' );
 define( 'GF_CHECKOUT_COM_PLUGIN_DIR', __DIR__ );
 define( 'GF_CHECKOUT_COM_PLUGIN_URL', plugins_url( plugin_basename( GF_CHECKOUT_COM_PLUGIN_DIR ) ) );
 define( 'GF_CHECKOUT_COM_PLUGIN_PATH', plugin_basename( __FILE__ ) );

@@ -73,7 +73,7 @@ Admin Resend:
 - **Restricted Fields**:
   - Email fields (made read-only)
   - Product fields (made read-only)
-  - Maintains data consistency 
+  - Maintains data consistency
 
 ### 4. Edit Processing System
 - **Purpose**: Handle form submissions and trigger updates

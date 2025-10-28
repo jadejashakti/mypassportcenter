@@ -347,6 +347,9 @@ jQuery(document).ready(function ($) {
 		$newTable.appendTo($wrapper);
 		// Remove the outer table
 		$outerTable.remove();
+		
+		// Initialize accordion functionality
+		initAccordion();
 	}
 
 	function addDataClassesToTable($table) {
@@ -416,7 +419,7 @@ jQuery(document).ready(function ($) {
 				// Append previous section
 				if (currentSection) {
 					// Add Edit button before closing previous section
-					const $editBtn = $(`<button class="section-edit-button" data-page="${sectionIndex}">Edit</button>`);
+					const $editBtn = $(`<div class="section-edit-btn-container"><button class="section-edit-button" data-page="${sectionIndex}">Edit Section</button></div>`);
 					currentSectionContent.append($editBtn);
 
 					currentSection.append(currentSectionContent);
@@ -427,7 +430,9 @@ jQuery(document).ready(function ($) {
 
 				const sectionTitle = $row.find('td').text().trim();
 				currentSection = $('<div class="section">');
-				currentSection.append(`<div class="section-header">${sectionTitle}</div>`);
+				currentSection.append(`<div class="section-header"><h3>${sectionTitle}</h3><div class="section-header-completed"><span>Completed</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="injected-svg" data-src="/svg/check-with-circle.svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.88-11.71L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z" fill="currentColor" fill-rule="nonzero"></path>
+</svg></div><span class="arrow-icon">▼</span></div>`);
 				currentSectionContent = $('<div class="section-content">');
 			}
 			// Question label
@@ -693,6 +698,36 @@ jQuery(document).ready(function ($) {
 
 		// Initial visibility check
 		updateVisibility();
+	}
+
+	function initAccordion() {
+		const $sections = $('.section');
+
+		// Hide all content except first section
+		$sections.not(':first').find('.section-content').hide();
+		
+		// Set initial arrow states
+		$sections.first().find('.arrow-icon').text('▲');
+		$sections.not(':first').find('.arrow-icon').text('▼');
+
+		// Add click handler to headers
+		$('.section-header').on('click', function () {
+			const $header = $(this);
+			const $section = $header.closest('.section');
+			const $content = $section.find('.section-content');
+			const $arrow = $header.find('.arrow-icon');
+
+			if ($content.is(':visible')) {
+				$content.slideUp();
+				$arrow.text('▼');
+			} else {
+				$sections.find('.section-content').slideUp();
+				$sections.find('.arrow-icon').text('▼');
+				$content.slideDown();
+				$arrow.text('▲');
+			}
+		});
+
 	}
 
 	$(document).on('click', '.section-edit-button', function (e) {
